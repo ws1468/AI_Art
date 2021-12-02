@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300;400;500;600&family=Titillium+Web:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body, html{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Titillium Web', sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'M PLUS 1 Code', sans-serif;
+  text-align: center;
+}
+
+IMG {
+  width: 70vw;
+}
+
+iframe {
+  width: 70vw;
+  height: 80vh;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2:400,700&subset=cyrillic');
+
+/* from https://codepen.io/viktorjs/pen/KQZYjo  start */
+ .wrapper {
+	 margin: 0 auto;
+	 padding: 0 16.66% 50px;
+	 width: 100%;
+}
+ article {
+	 position: relative;
+	 max-width: 100vw;
+	 margin: 0 auto;
+}
+ .timeline__nav {
+	 position: fixed;
+	 z-index: 99;
+	 top: 0;
+	 transition: top 0.3s ease-out;
+}
+ .timeline__nav ul {
+	 list-style: none;
+	 list-style-position: inside;
+	 margin: 15px 0;
+}
+ .timeline__nav ul li {
+	 margin: 15px 0;
+	 padding-left: 0;
+	 list-style-type: none;
+	 color: #bfc1c3;
+	 border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+	 cursor: pointer;
+	 transition: all 0.3s ease-out;
+}
+ .timeline__nav ul li.active {
+	 font-weight: bold;
+	 color: #f94125;
+	 border-bottom: 1px dotted transparent;
+	 transform: scale(1.2);
+}
+ .timeline__nav ul li:hover {
+	 color: #000;
+}
+/* from https://codepen.io/viktorjs/pen/KQZYjo  end */
+
+
+.milestone {
+  margin-top: 10vmin;
+}
+
+#contentGrid_Articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1vmin;
+  grid-row-gap: 1vmin;
+}
+
+/* from https://codepen.io/eyupucmaz/pen/oNbeXOb start */
+
+#contentGrid_Articles .contentItem {
+  margin: 1vmin;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#contentGrid_Articles .contentItem img {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+/* from https://codepen.io/eyupucmaz/pen/oNbeXOb end */
+
+
+#contentGrid_Articles .contentItem * {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#contentGrid_Articles .contentItem H4 {
+  margin: 1%;
+}
+
+#contentGrid_Articles .contentItem P {
+  font-size: .8rem;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f7f8fc;
+  font-family: "Roboto", sans-serif;
+  color: #10182f;
+} */
+
+#contentGrid_Articles .contentItem h3, #contentGrid_Articles .contentItem h6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 250px;
+}
+
+#contentGrid_Articles .contentItem h6 {
+  font-size: 13px;
+  margin: 0 0 40px;
+}
+
+#contentGrid_Articles .contentItem h4 {
+  display: flex;
+  margin-top: auto;
+}
+
+#contentGrid_Articles .contentItem h5 {
+  color: #545d7a;
+}
+
+
+
+
+
+@media only screen and (max-width: 991.98px) {
+
+  IMG {
+    width: 100vw;
+  }
+
+}
