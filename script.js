@@ -37,14 +37,17 @@ let articlesDatabase = [
     "date" : "April 2017",
     "image" : "https://s3.amazonaws.com/talkstar-photos/uploads/cc1dd9ad-abcf-4c05-8bda-05433f7c9a5d/CathyONeil_2017-embed.jpg",
     "author" : "Cathy O'Neil",
-    "desc" : 'Algorithms decide who gets a loan, who gets a job interview, who gets insurance and much more -- but they don'+"'t automatically make things fair. Mathematician and data scientist Cathy O'Neil coined a term for algorithms that are secret, important and harmful:" + '"weapons of math destruction." Learn more about the hidden agendas behind the formulas.',
+    // "desc" : 'Algorithms decide who gets a loan, who gets a job interview, who gets insurance and much more -- but they don'+"'t automatically make things fair. Mathematician and data scientist Cathy O'Neil coined a term for algorithms that are secret, important and harmful:" + '"weapons of math destruction." Learn more about the hidden agendas behind the formulas.',
+    "desc" : 'Algorithms decide who gets a loan, who gets a job interview, who gets insurance and much more -- but they don' + "'t automatically make things fair. Mathematician and data scientist Cathy O'Neil coined a term for algorithms...",
+
   },
   { "title" : "How I'm Fighting Bias In Algorithms",
     "link" : "https://www.ted.com/talks/joy_buolamwini_how_i_m_fighting_bias_in_algorithms/transcript?language=en",
     "date" : "November 2016",
     "image": "https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/16a96c4c-66b7-423d-8c82-1b081f8a2ace/JoyBuolamwini_2016X-embed.jpg?c=1050%2C550&w=1050",
     "author" : "Joy Buolamwini",
-    "desc" : 'MIT grad student Joy Buolamwini was working with facial analysis software when she noticed a problem: the software didn' + "'t detect her face -- because the people who coded the algorithm hadn't taught it to identify a broad range of skin tones and facial structures. Now she's on a mission to fight bias in machine learning, a phenomenon she calls the "+ '"coded gaze." It' + "'s an eye-opening talk about the need for accountability in coding ... as algorithms take over more and more aspects of our lives.",
+    // "desc" : 'MIT grad student Joy Buolamwini was working with facial analysis software when she noticed a problem: the software didn' + "'t detect her face -- because the people who coded the algorithm hadn't taught it to identify a broad range of skin tones and facial structures. Now she's on a mission to fight bias in machine learning, a phenomenon she calls the "+ '"coded gaze." It' + "'s an eye-opening talk about the need for accountability in coding ... as algorithms take over more and more aspects of our lives.",
+    "desc" : 'MIT grad student Joy Buolamwini was working with facial analysis software when she noticed a problem: the software didn' + "'t detect her face -- because the people who coded the algorithm hadn't taught it to identify a broad range of skin tones and facial structures...",
   }
 ];
 
@@ -83,7 +86,7 @@ for (var i = 0; i < articlesDatabase.length; i++) {
 function createComments(incomingJSON) {
   /// Create whole content item div and set class
   let newContentElement = document.createElement("DIV");
-  newContentElement.classList.add('contentItem');
+  newContentElement.classList.add('commentSection');
 
 
   let newImage = document.createElement("IMG");
@@ -97,49 +100,65 @@ function createComments(incomingJSON) {
 
 
 function createArticles(incomingJSON) {
+
+  let aTag = document.createElement("a");
+  aTag.classList.add("aTag");
+  aTag.href = incomingJSON['link'];
+
+
   /// Create whole content item div and set class
   let newContentElement = document.createElement("DIV");
-  newContentElement.classList.add('contentItem');
-
+  newContentElement.classList.add('articlesSection');
+  // let headerImage= document.createElement("DIV");
+  // headerImage.classList.add('headImage');
   /// Create & add header image
  let newImage = document.createElement("IMG");
  newImage.classList.add("headerImage");
  newImage.src = incomingJSON['image'];
+ // headerImage.appendChild(newImage);
  newContentElement.appendChild(newImage);
+ // newContentElement.appendChild(headerImage);
+
 
   /// Create HEADLINE h3, set class, set content
-  let newContentHeading = document.createElement("H3");
+  let newContentHeading = document.createElement("H4");
   newContentHeading.classList.add('contentTitle');
   newContentHeading.innerText = incomingJSON['title'];
   newContentElement.appendChild(newContentHeading);
 
   //description
   let newContentDesc = document.createElement("P");
+  newContentDesc.classList.add('contentDesc');
   newContentDesc.innerText = incomingJSON['desc'];
   newContentElement.appendChild(newContentDesc);
 
+
+  let newContentAuthorDate = document.createElement("DIV");
+  newContentAuthorDate.classList.add('authorDate');
   //author
   let newContentAuthor = document.createElement("H5");
+  newContentAuthor.classList.add('authorName');
   newContentAuthor.innerText = incomingJSON['author'];
-  newContentElement.appendChild(newContentAuthor);
-
+  // newContentElement.appendChild(newContentAuthor);
+  newContentAuthorDate.appendChild(newContentAuthor);
   //date
-  let newContentDate = document.createElement("H5");
+  let newContentDate = document.createElement("P");
+  newContentDate.classList.add('dateDate');
   newContentDate.innerText = incomingJSON['date'];
-  newContentElement.appendChild(newContentDate);
+  // newContentElement.appendChild(newContentDate);
+  newContentAuthorDate.appendChild(newContentDate);
 
-  //link
-  //var url_link = incomingJSON['link'];
-  //newContentElement.href = incomingJSON['link'];
+  newContentElement.appendChild(newContentAuthorDate);
+
+  //link -- put everything into an a-tag
+  aTag.appendChild(newContentElement);
 
   /// Add the item to the page
-  contentGrid_Articles.appendChild(newContentElement);
+  contentGrid_Articles.appendChild(aTag);
+  // contentGrid_Articles.appendChild(newContentElement);
   //newContentElement.href = url_link;
+
 }
-
-
-
-
 
 //from https://codepen.io/viktorjs/pen/KQZYjo start
 $(() => {
