@@ -23,7 +23,19 @@ body, html{
 
 h1 {
   font-family: 'Chakra Petch', sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
+}
+
+.title1 {
+  margin-left: 20vw;
+  text-align: left;
+}
+.title2 {
+  text-align: center;
+}
+.title3 {
+  text-align: right;
+  margin-right: 18vw;
 }
 
 h2 {
