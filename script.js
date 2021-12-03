@@ -1,8 +1,3 @@
-// new fullpage('#fullpage', {
-//   licenseKey: 'YOUR KEY HERE',
-//   sectionsColor: ['','','','',''],
-// });
-
 var myFullpage = new fullpage('#fullpage', {
   //Navigation
   	menu: '#Menu',
