@@ -3,55 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/fullpage.js/dist/fullpage.min.css">
   </head>
   <body>
 
-    <h1 id="title"> Mindmap | AI, Algorithms, and Art </h1>
+    <div id="fullpage">
+        <div data-anchor="top" class="section">
+          <h1 id="title"> Mindmap | AI, Algorithms, and Art </h1>
+        </div>
 
-    <hr>
-
-<!-- format from https://codepen.io/viktorjs/pen/KQZYjo -->
-    <article class="timeline">
-        <nav class="timeline__nav">
-            <ul>
-                <li><span>wow!!</span></li>
-                <li><span>hmm...</span></li>
-                <li><span>deeper thoughts</span></li>
-                <li><span>awareness</span></li>
-            </ul>
-        </nav>
-
-        <section class="timeline__section">
-            <div class="wrapper">
-                <h2 class="milestone">Nvidia Canvas Intro</h2>
-                  <!-- <h3>Nvidia Canvas </h3> -->
-                  <div class="video">
-                    <iframe src="https://www.youtube.com/embed/9u_08---oEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-
-                <h2 class="milestone">The Surreal Dreams of AI Generated Art | Video Essay</h2>
-                  <!-- <h3>The Surreal Dreams of AI Generated Art | Video Essay</h3> -->
-                  <div class="video">
-                    <iframe src="https://www.youtube.com/embed/Bi4sJEE8wCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  </div>
-
-                <h2 class="milestone">Comments for the Video Essay</h2>
-
-                  <div id="contentGrid_Comments">
-                  </div>
-
-                <h2 class="milestone">Learn More</h2>
-
-                  <div id="contentGrid_Articles">
-                  </div>
-
+        <div data-anchor="nvidiaCanvas" class="section">
+          <h2 class="milestone">Nvidia Canvas</h2>
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/9u_08---oEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </section>
-    </article>
+        </div>
 
+        <div data-anchor="aiArt" class="section">
+          <h2 class="milestone">The Surreal Dreams of AI Generated Art | Video Essay</h2>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/Bi4sJEE8wCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
 
+        <div data-anchor="comments" class="section">
+          <h2 class="milestone">Comments for the Video Essay</h2>
+
+          <div class="slide" data-anchor="slide1">
+            <img src="ytmsg1.jpeg">
+          </div>
+
+          <div class="slide" data-anchor="slide2">
+            <img src="ytmsg2.png">
+          </div>
+
+          <div class="slide" data-anchor="slide2">
+            <img src="ytmsg3.png">
+          </div>
+        </div>
+
+        <div data-anchor="moreInfo" class="section">
+          <h2 class="milestone">Learn More</h2>
+
+          <div id="contentGrid_Articles">
+          </div>
+        </div>
+
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="script.js"></script>
   </body>

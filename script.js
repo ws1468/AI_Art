@@ -1,29 +1,83 @@
-let outputElement = document.getElementById('outputElement');
-let outputParagraph = document.getElementById('outputParagraph');
-let contentGrid_Comments = document.getElementById('contentGrid_Comments');
+// new fullpage('#fullpage', {
+//   licenseKey: 'YOUR KEY HERE',
+//   sectionsColor: ['','','','',''],
+// });
+
+var myFullpage = new fullpage('#fullpage', {
+  //Navigation
+  	menu: '#Menu',
+  	lockAnchors: false,
+    anchors:['top', 'nvidiaCanvas', 'aiArt', 'comments', 'moreInfo'],
+  	navigation: true,
+  	navigationPosition: 'right',
+  	navigationTooltips: ['a thought', 'wow!!', 'hmm...', 'deeper thoughts', 'awareness'],
+  	showActiveTooltip: true,
+  	slidesNavigation: true,
+  	slidesNavPosition: 'bottom',
+
+  	//Scrolling
+  	css3: true,
+  	scrollingSpeed: 500,
+  	autoScrolling: true,
+  	fitToSection: true,
+  	fitToSectionDelay: 1000,
+  	scrollBar: false,
+  	easing: 'easeInOutCubic',
+  	easingcss3: 'ease',
+  	loopBottom: false,
+  	loopTop: false,
+  	loopHorizontal: true,
+  	continuousVertical: false,
+  	continuousHorizontal: false,
+  	scrollHorizontally: false,
+  	interlockedSlides: false,
+  	dragAndMove: false,
+  	offsetSections: false,
+  	resetSliders: false,
+  	fadingEffect: false,
+  	normalScrollElements: '#element1, .element2',
+  	scrollOverflow: false,
+  	scrollOverflowReset: false,
+  	scrollOverflowOptions: null,
+  	touchSensitivity: 15,
+  	bigSectionsDestination: null,
+
+  	//Accessibility
+  	keyboardScrolling: true,
+  	animateAnchor: true,
+  	recordHistory: true,
+
+  	//Design
+  	controlArrows: true,
+  	verticalCentered: true,
+    //
+    sectionsColor : ['#bdbdbd', '#adadad', '#bdbdbd', '#adadad', '#bdbdbd',],
+    //sectionsColor : ['#fa758e', '#95c750', '#45b5ff', '#565264', '#fac337',],
+    //
+  	paddingTop: '3em',
+  	paddingBottom: '10px',
+  	fixedElements: '#header, .footer',
+  	responsiveWidth: 0,
+  	responsiveHeight: 0,
+  	responsiveSlides: false,
+  	parallax: false,
+  	parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+  	dropEffect: false,
+  	dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999},
+  	waterEffect: false,
+  	waterEffectOptions: { animateContent: true, animateOnMouseMove: true},
+  	cards: false,
+  	cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+
+  	//Custom selectors
+  	sectionSelector: '.section',
+  	slideSelector: '.slide',
+
+  	lazyLoading: true,
+});
+
 let contentGrid_Articles = document.getElementById('contentGrid_Articles');
 
-// videos
-// let videosDatabase = [
-//   { "title" : "Nvidia Canvas",
-//     "video" : '<iframe src="https://www.youtube.com/embed/9u_08---oEw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-//   },
-//   { "title" : "The Surreal Dreams of AI Generated Art | Video Essay",
-//     "video" : '<iframe src="https://www.youtube.com/embed/Bi4sJEE8wCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-//   }
-// ];
-
-// youtube comment photos
-let commentImages = [
-  { "comment" : "ytmsg1.jpeg",
-  },
-  { "comment" : "ytmsg2.png",
-  },
-  { "comment" : "ytmsg3.png",
-  }
-];
-
-// articles i've read before
 let articlesDatabase = [
   { "title" : "Against Black Inclusion in Facial Recognition",
     "link" : "https://digitaltalkingdrum.com/2017/08/15/against-black-inclusion-in-facial-recognition/",
@@ -51,60 +105,15 @@ let articlesDatabase = [
   }
 ];
 
-// for (var i = 0; i < videosDatabase.length; i++) {
-//   createVideoSections(videosDatabase[i]);
-// }
-for (var i = 0; i < commentImages.length; i++) {
-  createComments(commentImages[i]);
-}
 for (var i = 0; i < articlesDatabase.length; i++) {
   createArticles(articlesDatabase[i]);
 }
-
-//trying to json videos
-// function createVideoSections(incomingJSON) {
-//   /// Create whole content item div and set class
-//   let newContentElement = document.createElement("DIV");
-//   newContentElement.classList.add('contentItem');
-//
-//   /// Create HEADLINE h3, set class, set content
-//   let newContentHeading = document.createElement("H3");
-//   newContentHeading.classList.add('contentTitle');
-//   newContentHeading.innerText = incomingJSON['title'];
-//   /// Add the HEADLINE to the item
-//   newContentElement.appendChild(newContentHeading);
-//
-//   let newContentVideo = document.createElement("video");
-//   newContentVideo.src = incomingJSON['video'];
-//   newContentElement.appendChild(newContentVideo);
-//
-//   /// Add the item to the page
-//   contentGridElement.appendChild(newContentElement);
-// }
-
-
-function createComments(incomingJSON) {
-  /// Create whole content item div and set class
-  let newContentElement = document.createElement("DIV");
-  newContentElement.classList.add('commentSection');
-
-
-  let newImage = document.createElement("IMG");
-  // newImage.classList.add("footerImage");
-  newImage.src = incomingJSON['comment'];
-  newContentElement.appendChild(newImage);
-
-  /// Add the item to the page
-  contentGrid_Comments.appendChild(newContentElement);
-}
-
 
 function createArticles(incomingJSON) {
 
   let aTag = document.createElement("a");
   aTag.classList.add("aTag");
   aTag.href = incomingJSON['link'];
-
 
   /// Create whole content item div and set class
   let newContentElement = document.createElement("DIV");
@@ -118,7 +127,6 @@ function createArticles(incomingJSON) {
  // headerImage.appendChild(newImage);
  newContentElement.appendChild(newImage);
  // newContentElement.appendChild(headerImage);
-
 
   /// Create HEADLINE h3, set class, set content
   let newContentHeading = document.createElement("H4");
@@ -152,75 +160,8 @@ function createArticles(incomingJSON) {
 
   //link -- put everything into an a-tag
   aTag.appendChild(newContentElement);
-
-  /// Add the item to the page
+  //
+  // /// Add the item to the page
   contentGrid_Articles.appendChild(aTag);
   // contentGrid_Articles.appendChild(newContentElement);
-  //newContentElement.href = url_link;
-
 }
-
-//from https://codepen.io/viktorjs/pen/KQZYjo start
-$(() => {
-  let stickyTop = 0,
-      scrollTarget = false;
-  let timeline = $('.timeline__nav'),
-      items = $('li', timeline),
-      milestones = $('.timeline__section .milestone'),
-      offsetTop = parseInt(timeline.css('top'));
-  const TIMELINE_VALUES = {
-    start: 190,
-    step: 30
-  };
-  $(window).resize(function () {
-    timeline.removeClass('fixed');
-    stickyTop = timeline.offset().top - offsetTop;
-    $(window).trigger('scroll');
-  }).trigger('resize');
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > stickyTop) {
-      timeline.addClass('fixed');
-    } else {
-      timeline.removeClass('fixed');
-    }
-  }).trigger('scroll');
-  items.find('span').click(function () {
-    let li = $(this).parent(),
-        index = li.index(),
-        milestone = milestones.eq(index);
-
-    if (!li.hasClass('active') && milestone.length) {
-      scrollTarget = index;
-      let scrollTargetTop = milestone.offset().top - 80;
-      $('html, body').animate({
-        scrollTop: scrollTargetTop
-      }, {
-        duration: 400,
-        complete: function complete() {
-          scrollTarget = false;
-        }
-      });
-    }
-  });
-  $(window).scroll(function () {
-    let viewLine = $(window).scrollTop() + $(window).height() / 3,
-        active = -1;
-
-    if (scrollTarget === false) {
-      milestones.each(function () {
-        if ($(this).offset().top - viewLine > 0) {
-          return false;
-        }
-
-        active++;
-      });
-    } else {
-      active = scrollTarget;
-    }
-
-    timeline.css('top', -1 * active * TIMELINE_VALUES.step + TIMELINE_VALUES.start + 'px');
-    items.filter('.active').removeClass('active');
-    items.eq(active != -1 ? active : 0).addClass('active');
-  }).trigger('scroll');
-});
-//from https://codepen.io/viktorjs/pen/KQZYjo end
