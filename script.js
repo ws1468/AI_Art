@@ -50,8 +50,8 @@ var myFullpage = new fullpage('#fullpage', {
   	//Design
   	controlArrows: true,
   	verticalCentered: true,
-    //
-    sectionsColor : ['#bdbdbd', '#adadad', '#bdbdbd', '#adadad', '#bdbdbd',],
+    //linear-gradient(to bottom right, red, yellow)
+    //sectionsColor : ['#bdbdbd', '#adadad', '#bdbdbd', '#adadad', '#bdbdbd',],
     //sectionsColor : ['#fa758e', '#95c750', '#45b5ff', '#565264', '#fac337',],
     //
   	paddingTop: '3em',

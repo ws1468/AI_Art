@@ -18,7 +18,7 @@ body, html{
   margin: 0px;
   padding: 0px;
   font-family: 'Rajdhani', sans-serif;
-  color: #fff;
+  /* color: #fff; */
 }
 
 h1 {
@@ -56,7 +56,7 @@ iframe {
   background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   width: 20vw;
 }
 
@@ -96,7 +96,7 @@ iframe {
 
 .articlesSection:hover {
   transition: box-shadow 0.3s ease-in-out;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 #contentGrid_Articles a {
@@ -110,4 +110,30 @@ iframe {
 
 #fp-nav ul li .fp-tooltip {
   font-size: 18px;
+}
+
+#one {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #5b247a, #17ead9);
+}
+
+#two {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #08c792, #b588f7);
+  /* background-image: linear-gradient(to bottom right, #17ead9, #184e68); */
+}
+
+#three {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #5e72eb, #ff9190);
+}
+
+#four {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #ff9190, #080742);
+}
+
+#five {
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #5e72eb, #fdc094);
 }
