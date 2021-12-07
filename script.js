@@ -5,7 +5,7 @@ var myFullpage = new fullpage('#fullpage', {
     anchors:['top', 'nvidiaCanvas', 'aiArt', 'comments', 'moreInfo'],
   	navigation: true,
   	navigationPosition: 'right',
-  	navigationTooltips: ['a thought', 'wow!!', 'hmm...', 'deeper thoughts', 'awareness'],
+  	navigationTooltips: ['a thought', 'wow!!', 'hmm...', 'deeper thoughts', 'awareness', 'fun!'],
   	showActiveTooltip: true,
   	slidesNavigation: true,
   	slidesNavPosition: 'bottom',
