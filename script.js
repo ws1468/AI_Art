@@ -2,10 +2,10 @@ var myFullpage = new fullpage('#fullpage', {
   //Navigation
   	menu: '#Menu',
   	lockAnchors: false,
-    anchors:['top', 'nvidiaCanvas', 'aiArt', 'comments', 'moreInfo'],
+    anchors:['top', 'nvidia_canvas', 'ai_art', 'comments', 'more_info', "try_art", "art_showcase", "more_art"],
   	navigation: true,
   	navigationPosition: 'right',
-  	navigationTooltips: ['a thought', 'wow!!', 'hmm...', 'deeper thoughts', 'awareness', 'fun!'],
+  	navigationTooltips: ['a thought', 'wow!!', 'hmm...', 'deeper thoughts', 'awareness', 'Fun!', 'My attempts'],
   	showActiveTooltip: true,
   	slidesNavigation: true,
   	slidesNavPosition: 'bottom',
